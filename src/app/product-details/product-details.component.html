@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="mt-5">
+    <h4 class="text-primary text-center mb-4" routerLink="/">Details of Product</h4>
+    <div class="fs-5">
+    </div>
+</div>
+
+<div>
+    <div class="container">
+
+        <div class="card rounded-5 p-3  mx-5 mt-3 w-75s">
+            <div class="row">
+                <div class="col-6">
+                    <a class="text-primary mt-3 mb-3 fw-bold fs-6 text-decoration-none">{{productlist?.title}}</a>
+                    <h6>
+                        Brand:- {{productlist?.brand}}
+                    </h6>
+                    <h6>
+                        Category:- {{productlist?.category}}
+                    </h6>
+                    <h6>
+                        Price:- {{productlist?.price}}
+                    </h6>
+                    <h6>
+                        Stock:- {{productlist?.stock}}
+                    </h6>
+                    <h6>
+                        DiscountPercentage:- {{productlist?.discountPercentage}}
+                    </h6>
+                    <h6> Rating:-{{productlist?.rating}}</h6>
+                    <h6>
+                        Description:-{{productlist?.description}}
+                    </h6>
+                </div>
+                <div class="col-6">
+                        <img src="{{productlist?.image}}" alt="Product Image" ngxExpires="30d" style="height: 400px; width: 400px;">
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>

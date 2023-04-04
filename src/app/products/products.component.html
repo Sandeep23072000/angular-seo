@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<div class="mt-5">
+    <h1 class="text-primary mt-3 text-center mb-3 fs-3" routerLink="/login">List of Products: All Type of Products</h1>
+    <h2 class="mx-5 text-secondary fs-5">Here, We will discribe the list of related products as Mobile phones, laptops and
+        other type of electronic products and some more.</h2>
+</div>
+
+<div>
+    <div class="container">
+        <div *ngFor="let item of productlist">
+            <div class="mt-2">
+                <a class="text-primary fw-bold fs-6 text-decoration-none"
+                    [routerLink]="['/productdetails', item.id]">{{item.title}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
