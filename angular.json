@@ -132,7 +132,9 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/",
+              "/products",
+              "/productdetails/:id"
             ]
           },
           "configurations": {
