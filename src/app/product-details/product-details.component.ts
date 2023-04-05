@@ -14,6 +14,10 @@ export class ProductDetailsComponent implements OnInit {
   images: any;
 
   constructor(private meta: Meta, private title: Title, private route: ActivatedRoute, private http: HttpClient) {
+    this.data();
+  }
+  ngOnInit(): void {}
+  data(){
     this.iddata = this.route.snapshot.params['id'];
     this.http.get('https://fakestoreapi.com/products/' + this.iddata).subscribe((response: any) => {
       console.log(response)
@@ -26,7 +30,7 @@ export class ProductDetailsComponent implements OnInit {
     this.meta.updateTag({ property: "og:url", content: "https://dainty-pithivier-76e1c1.netlify.app/"+ this.iddata });
     this.meta.updateTag({ property: "og:description", content: this.productlist.description });
     
-
+  
     this.meta.updateTag({ name: "twitter:title", content: this.productlist.title });
     this.meta.updateTag({ name: "twitter:type", content: this.productlist.category });
     this.meta.updateTag({ name: "twitter:image", content: this.productlist.image });
@@ -34,10 +38,7 @@ export class ProductDetailsComponent implements OnInit {
     this.meta.updateTag({ name: "twitter:creator", content: "@productsh" });
     this.meta.addTag({ name: "twitter:image:alt", content: "Product Images" });
     this.meta.updateTag({ name: "twitter:description", content: this.productlist.description });
-    
   });
-  }
-  ngOnInit(): void {
   }
 
 }
